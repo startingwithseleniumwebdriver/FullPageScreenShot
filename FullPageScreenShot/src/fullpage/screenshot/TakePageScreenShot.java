@@ -25,6 +25,7 @@ public class TakePageScreenShot {
 		try {
 			FileUtils.copyFile(scrSinglePage, new File(path));
 		} catch (IOException e) {
+			System.out.println("in catch" + e);
 		}	
 	}
 
@@ -46,7 +47,7 @@ public class TakePageScreenShot {
 			stich(browserFullHeight,browserVisibleHeight,path);
 		}
 		catch(Exception e){
-			System.out.println("in catch");
+			System.out.println("in catch" + e);
 		}
 
 	}
@@ -74,7 +75,7 @@ public class TakePageScreenShot {
 				Thread.sleep(250);
 			}
 			catch(Exception e){
-
+				System.out.println("in catch" + e);
 			}
 		}
 	}
@@ -126,8 +127,6 @@ public class TakePageScreenShot {
 				imgStichHeight =imgStichHeight + buffImages[i].getHeight();
 			}
 		}
-		System.out.println("Image concatenated.");
-		//ImageIO.write(finalImg, "png", new File(path));
-		ImageIO.write(finalImg, "png", new File("D:\\temp2\\home.png"));
+		ImageIO.write(finalImg, "png", new File(path));
 	}
 }
